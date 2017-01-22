@@ -1,5 +1,8 @@
 CXX=g++
-CXXFLAGS= -std=c++11 -o2 -Wall
+
+SOURCES= a5.hpp token.hpp
+CXXFLAGS= -std=c++11 -o2 -Wall $(SOURCES)
+
 all: a5
 
 clean:

@@ -18,6 +18,16 @@ int main(int argc, char* argv[]) {
     std::string s;
     while (std::cin >> s) tokens.push_back(to_token(s));
 
+    std::vector<token>::iterator it = tokens.begin();
+
+    std::cout << " -> start <- "<< std::endl;
+
+    while(it != tokens.end()){
+        if (it->is_operand()) std::cout << it->as_operand() << std::endl;
+        else if(it->is_operator()) std::cout << it->as_operator() << std::endl;
+        ++it;
+    }
+
     // your code is invoked here
     try {
         double d = RPN(tokens.begin(), tokens.end());
