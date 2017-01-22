@@ -22,7 +22,7 @@ using std::stack;
 
 template <typename Iter> double RPN(Iter first, Iter last) {
     stack<double> xiaoming;
-    if (first != last) {
+    while (first != last) {
         // if the input is a number, then push in to the stackl
         if (first->is_operand()) xiaoming.push(first->as_operand());
         // else eval this thing, and eval the result;
@@ -51,6 +51,8 @@ template <typename Iter> double RPN(Iter first, Iter last) {
             cout<< "result is -> " << result;
 
         }
+
+        ++first;
     }
 
     if (xiaoming.size() ==1)  return xiaoming.top();
